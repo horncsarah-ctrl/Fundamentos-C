@@ -89,6 +89,7 @@ Fundamentos-C/
 ├── Aula-01/ Introdução a Lógica da Programação e Fundamentos da Programação
 ├── Aula-02/ Praticar o Raciocínio Lógico Aplicado em Algoritmos
 ├── Aula-03/ Aprender o Uso de Operadores Relacionais e Estruturas de Seleção
+├── Aula-04/ Aprender Estruturas de Decisão e Condicionais
 └── README.md
 ```
 
