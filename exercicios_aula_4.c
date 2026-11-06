@@ -1,4 +1,4 @@
-// Fundamentos de Programação em C — Exercícios - Uso de operadores relacionais e Estruturas de Seleção - AULA 4 - parte 1
+// Fundamentos de Programação em C — Exercícios - Estruturas de Decisão e Condicionais - AULA 4 - parte 1
 
 #include <stdio.h>
 #include <math.h>
@@ -7,7 +7,8 @@
 #include <windows.h>
 
 // Exercício 2
-int conta_bancaria(){
+int conta_bancaria()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     float saldo, novo_saldo, valor_deposito, valor_retirada;
@@ -20,22 +21,26 @@ int conta_bancaria(){
     printf("Digite 1 para realizar depósito \nDigite 2 para realizar saque\n");
     printf("Insira a operação: ");
     scanf("%d", &tipo_operacao);
-    if (tipo_operacao == 1){
+    if (tipo_operacao == 1)
+    {
         printf("=================================================\n");
         printf("Você está realizando um depósito: ");
         scanf("%f", &valor_deposito);
         novo_saldo = saldo + valor_deposito;
         printf("O saldo atual é de: R$ %.2f", novo_saldo);
     }
-    else {
+    else
+    {
         printf("=================================================\n");
         printf("Você está realizando um saque: ");
         scanf("%f", &valor_retirada);
         novo_saldo = saldo - valor_retirada;
-        if (novo_saldo < 0){
+        if (novo_saldo < 0)
+        {
             printf("O novo saldo ficou NEGATIVO! R$ %.2f", novo_saldo);
         }
-        else{
+        else
+        {
             printf("O saldo atual é de: R$ %.2f", novo_saldo);
         }
     }
@@ -43,7 +48,8 @@ int conta_bancaria(){
 }
 
 // Exercício 3
-int peso_ideal(){
+int peso_ideal()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     float sexo, altura, peso_ideal;
@@ -53,33 +59,39 @@ int peso_ideal(){
     scanf("%f", &sexo);
     printf("Insira a sua altura: ");
     scanf("%f", &altura);
-    if (sexo == 1){
+    if (sexo == 1)
+    {
         peso_ideal = 62.1 * altura - 44.7;
         printf("O seu peso ideal é %.2f, considerando seu gênero e altura\n", peso_ideal);
     }
-    else if (sexo == 2){
+    else if (sexo == 2)
+    {
         peso_ideal = 72.7 * altura - 58;
         printf("O seu peso ideal é %.2f, considerando seu gênero e altura\n", peso_ideal);
     }
-    else{
+    else
+    {
         printf("Valor Inválido");
     }
     return 0;
 }
 
 // Exercício 4
-int valor_total_compra(){
+int valor_total_compra()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     float valor_total;
     int quant_macas;
     printf("Insira a quantidade de macas compradas:\n");
     scanf("%d", &quant_macas);
-    if (quant_macas < 12){
+    if (quant_macas < 12)
+    {
         valor_total = quant_macas * 1.30;
         printf("O valor total da compra é de R$ %.2f\n", valor_total);
     }
-    else{
+    else
+    {
         valor_total = quant_macas * 1.00;
         printf("O valor total da compra é de R$ %.2f\n", valor_total);
     }
@@ -87,26 +99,31 @@ int valor_total_compra(){
 }
 
 // Exercício 5
-int imprimindo_condicionalmente(){
+int imprimindo_condicionalmente()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     int valor;
     printf("Insira o valor: \n");
     scanf("%d", &valor);
-    if (valor <=10){
+    if (valor <= 10)
+    {
         printf("F1\n");
     }
-    else if(valor <= 100){
+    else if (valor <= 100)
+    {
         printf("F2\n");
     }
-    else{
+    else
+    {
         printf("F3\n");
     }
     return 0;
 }
 
 // Exercício 6
-int tres_valores_crescente(){
+int tres_valores_crescente()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     int valorA, valorB, valorC;
@@ -117,37 +134,48 @@ int tres_valores_crescente(){
     scanf("%d", &valorB);
     printf("Insira o valor de C: ");
     scanf("%d", &valorC);
-    if (valorA > valorB){
-        if (valorA > valorC){
-            if (valorB > valorC){
+    if (valorA > valorB)
+    {
+        if (valorA > valorC)
+        {
+            if (valorB > valorC)
+            {
                 printf("Do menor para o maior: valor C (%d), valor B (%d), valor A (%d)\n", valorC, valorB, valorA);
             }
-            else{
+            else
+            {
                 printf("Do menor para o maior: valor B (%d), valor C (%d), valor A (%d)\n", valorB, valorC, valorA);
             }
         }
-        else{
+        else
+        {
             printf("Do menor para o maior: valor B (%d), valor A (%d), valor C (%d)\n", valorB, valorA, valorC);
         }
     }
-    else{
-        if (valorB > valorC){
-            if (valorA > valorC){
+    else
+    {
+        if (valorB > valorC)
+        {
+            if (valorA > valorC)
+            {
                 printf("Do menor para o maior: valor C (%d), valor A (%d), valor B (%d)\n", valorC, valorA, valorB);
             }
-            else {
+            else
+            {
                 printf("Do menor para o maior: valor A (%d), valor C (%d), valor B (%d)\n", valorA, valorC, valorB);
             }
         }
-        if (valorC > valorB){
+        else
+        {
             printf("Do menor para o maior: valor A (%d), valor B (%d), valor C (%d)\n", valorA, valorB, valorC);
         }
     }
     return 0;
 }
- 
+
 // Exercício 7
-int aluno_aprovado_reprovado_3_notas(){
+int aluno_aprovado_reprovado_3_notas()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     float nota1, nota2, nota3, peso1, peso2, peso3, media;
@@ -158,25 +186,20 @@ int aluno_aprovado_reprovado_3_notas(){
     printf("Insira a terceira nota: ");
     scanf("%f", &nota3);
     media = ((nota1 * 2) + (nota2 * 3) + (nota3 * 5)) / (2 + 3 + 5);
-    if (media >= 70){
+    if (media >= 70)
+    {
         printf("Sua média foi o suficiente = APROVADO! (média = %.2f)\n", media);
     }
-    else {
+    else
+    {
         printf("Sua média não foi o suficiente = REPROVADO! (média = %.2f)\n", media);
     }
     return 0;
 }
 
-
-// Considere que o último concurso vestibular apresentou três provas: Português, Matemática e Conhecimentos
-// Gerais. Considerando que para cada candidato tem-se um registro contendo o seu nome e as notas obtidas em
-// cada uma das provas, construa um algoritmo que forneça:
-// a) O nome e as notas em cada prova do candidato;
-// b) A média do candidato;
-// Calcule e escreva uma informação dizendo se o candidato foi aprovado ou não. Considere que um candidato é
-// aprovado se sua média for maior que 7.0 e se não apresentou nenhuma nota abaixo de 5.0.
 // Exercício 8
-int informacoes_candidatos_concurso(){
+int informacoes_candidatos_concurso()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     float nota_portugues, nota_matematica, nota_conhec_gerais, media;
@@ -191,28 +214,35 @@ int informacoes_candidatos_concurso(){
     printf("Insira sua nota em conhecimentos gerais: ");
     scanf("%f", &nota_conhec_gerais);
     media = (nota_conhec_gerais + nota_matematica + nota_portugues) / 3.0;
-    if(media >= 70){
-        if (nota_portugues < 50){
+    if (media >= 70)
+    {
+        if (nota_portugues < 50)
+        {
             printf("REPROVADO\n");
         }
-        else if (nota_matematica < 50){
+        else if (nota_matematica < 50)
+        {
             printf("REPROVADO\n");
         }
-        else if (nota_conhec_gerais < 50){
+        else if (nota_conhec_gerais < 50)
+        {
             printf("REPROVADO\n");
         }
-        else{
+        else
+        {
             printf("APROVADO\n");
         }
     }
-    else{
+    else
+    {
         printf("REPROVADO\n");
     }
     return 0;
 }
 
 // Exercício 9
-int comissao_vendas(){
+int comissao_vendas()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     char nome[25];
@@ -222,30 +252,36 @@ int comissao_vendas(){
     gets(nome);
     printf("Insira o valor das vendas: ");
     scanf("%f", &valor_vendas);
-    if (valor_vendas > 50000){
+    if (valor_vendas > 50000)
+    {
         comissao = valor_vendas * 0.12;
         printf("Corretor %s - Valor da venda - R$ %.2f\n", nome, valor_vendas);
         printf("A comissão é de R$ %.2f\n", comissao);
     }
-    else{
-        if (valor_vendas <= 50000){
-            if (valor_vendas >= 30000){
+    else
+    {
+        if (valor_vendas <= 50000)
+        {
+            if (valor_vendas >= 30000)
+            {
                 comissao = valor_vendas * 0.095;
                 printf("Corretor %s - Valor da venda - R$ %.2f\n", nome, valor_vendas);
                 printf("A comissão é de R$ %.2f\n", comissao);
             }
-        else{
-            comissao = valor_vendas * 0.07;
-            printf("Corretor %s - Valor da venda - R$ %.2f\n", nome, valor_vendas);
-            printf("A comissão é de R$ %.2f\n", comissao);
-        }
+            else
+            {
+                comissao = valor_vendas * 0.07;
+                printf("Corretor %s - Valor da venda - R$ %.2f\n", nome, valor_vendas);
+                printf("A comissão é de R$ %.2f\n", comissao);
+            }
         }
     }
     return 0;
 }
 
 // Exercício 10
-int comparacao_soma(){
+int comparacao_soma()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     int valorA, valorB, valorC, soma;
@@ -256,42 +292,55 @@ int comparacao_soma(){
     printf("Insira o valor de C: ");
     scanf("%d", &valorC);
     soma = valorA + valorB;
-    if (soma > valorC){
+    if (soma > valorC)
+    {
         printf("A soma (%d) é MAIOR que o valor de C (%d)\n", soma, valorC);
     }
-    else if (soma < valorC){
+    else if (soma < valorC)
+    {
         printf("A soma (%d) é MENOR que o valor de C (%d)\n", soma, valorC);
     }
-    else{
+    else
+    {
         printf("A soma (%d) é IGUAL que o valor de C (%d)\n", soma, valorC);
     }
     return 0;
 }
 
 // Exercício 11
-int conceito_por_nota(){
+int conceito_por_nota()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     float nota;
     printf("Insira sua nota: ");
     scanf("%f", &nota);
-    if (nota <= 49){
+    if (nota < 0)
+    {
+        printf("Nota Inválida\n");
+    }
+    else if (nota <= 49)
+    {
         printf("Conceito = INSUFICIENTE!\n");
     }
-    else if (nota <= 64){
+    else if (nota <= 64)
+    {
         printf("Conceito = REGULAR!\n");
     }
-    else if (nota <= 84){
+    else if (nota <= 84)
+    {
         printf("Conceito = BOM!");
     }
-    else{
+    else
+    {
         printf("Conceito = ÓTIMO!");
     }
     return 0;
 }
 
 // Exercício 12
-int dois_valores_multiplos_ou_nao(){
+int dois_valores_multiplos_ou_nao()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     int valor1, valor2;
@@ -299,14 +348,18 @@ int dois_valores_multiplos_ou_nao(){
     scanf("%d", valor1);
     printf("Insira o segundo valor: ");
     scanf("%d", valor2);
-    if (valor1 % valor2 == 0){
+    if (valor1 % valor2 == 0)
+    {
         printf("O primeiro valor (%d) é múltiplo do segundo valor (%d)", valor1, valor2);
     }
-    else{
-        if (valor2 % valor1==0){
+    else
+    {
+        if (valor2 % valor1 == 0)
+        {
             printf("O segundo valor (%d) é múltiplo do primeiro valor (%d)", valor2, valor1);
         }
-        else {
+        else
+        {
             printf("Não são múltiplos");
         }
     }
@@ -314,29 +367,232 @@ int dois_valores_multiplos_ou_nao(){
 }
 
 // Exercício 13
-int ler_numero_par_positivo_negativo(){
+int ler_numero_par_positivo_negativo()
+{
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     printf("\nLer um número inteiro e dizer se ele é par ou ímpar: ");
     int numero;
     printf("\nInsira um número para saber se ele é par ou ímpar: ");
     scanf("%d", &numero);
-    if (numero % 2 == 0){
+    if (numero % 2 == 0)
+    {
         printf("O número %d é par\n", numero);
     }
-    else {
+    else
+    {
         printf("O número %d é ímpar\n", numero);
     }
-    if (numero > 0){
+    if (numero > 0)
+    {
         printf("O número %d é positivo\n", numero);
     }
-    else{
+    else
+    {
         printf("O número %d é negativo\n", numero);
     }
     return 0;
 }
 
-int main(){
+// Exercício 14
+int comparacao_de_dados()
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    float altura1, altura2, peso1, peso2;
+    char nome1[30], nome2[30];
+    printf("\nLer a altura e peso de duas pessoas e dizer quem é a mais alta e quem é a mais pesada:");
+    printf("\nInsira o primeiro nome: ");
+    setbuf(stdin, NULL);
+    gets(nome1);
+    printf("Insira o peso da primeira pessoa: ");
+    scanf("%f", &peso1);
+    printf("Insira a altura da primeira pessoa: ");
+    scanf("%f", &altura1);
+    printf("Insira o segundo nome: ");
+    setbuf(stdin, NULL);
+    gets(nome2);
+    printf("Insira o peso da segunda pessoa: ");
+    scanf("%f", &peso2);
+    printf("Insira a altura da segunda pessoa: ");
+    scanf("%f", &altura2);
+    if (altura1 > altura2)
+    {
+        printf("A altura da primeira pessoa %s (%.2f), é maior que a da segunda pessoa %s (%.2f)\n", nome1, altura1, nome2, altura2);
+    }
+    else
+    {
+        printf("A altura da segunda pessoa %s (%.2f), é maior que a da primeira pessoa %s (%.2f)\n", nome2, altura2, nome1, altura1);
+    }
+    if (peso1 > peso2)
+    {
+        printf("O peso da primeira pessoa %s (%.2f), é maior que o da segunda pessoa %s (%.2f)\n", nome1, peso1, nome2, peso2);
+    }
+    else
+    {
+        printf("O peso da segunda pessoa %s (%.2f), é maior que o da primeira pessoa %s (%.2f)\n", nome2, peso2, nome1, peso1);
+    }
+    return 0;
+}
+
+// Exercício 15
+int calculo_salario()
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    float horas, salario_hora, horas_extras, salario_final, valor_horas_extras, horas_normais, pagamento_horas_extras = 0;
+    printf("Insira a quantidade de horas trabalhadas");
+    scanf("%f", &horas);
+    printf("Insira o valor das horas regulares: ");
+    scanf("%f", &salario_hora);
+    if (horas > 160)
+    {
+        horas_extras = horas - 160;
+        valor_horas_extras = (salario_hora * 0.50);
+        pagamento_horas_extras = horas_extras * valor_horas_extras;
+    }
+    horas_normais = horas * salario_hora;
+    salario_final = horas_normais + pagamento_horas_extras;
+    printf("O salário é de R$ %.2f", salario_final);
+    return 0;
+}
+
+// Exercício 16
+int placar_jogo()
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    char nome1[25], nome2[25];
+    int numero_gols1, numero_gols2;
+    setbuf(stdin, NULL);
+    printf("Insira o nome do primeiro time: ");
+    gets(nome1);
+    printf("Insira o número de gols do primeiro time: ");
+    scanf("%d", &numero_gols1);
+    setbuf(stdin, NULL);
+    printf("Insira o nome do segundo time: ");
+    gets(nome2);
+    printf("Insira o número de gols do segundo time: ");
+    scanf("%d", &numero_gols2);
+    if (numero_gols1 > numero_gols2)
+    {
+        printf("O time %s GANHOU de %d a %d\n", nome1, numero_gols1, numero_gols2);
+    }
+    else if (numero_gols2 > numero_gols1)
+    {
+        printf("O time %s GANHOU de %d a %d\n", nome2, numero_gols2, numero_gols1);
+    }
+    else
+    {
+        printf("O jogo EMPATOU em %d a %d\n", numero_gols2, numero_gols1);
+    }
+    return 0;
+}
+
+// Exercício 17
+int posto_de_combustivel()
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    float quant_litros, valor_pagar, desconto;
+    char letra;
+    printf("Insira o número de litros vendidos: ");
+    scanf("%f", &quant_litros);
+    printf("Aperte A para Álcool ou G para Gasolina: ");
+    scanf(" %c", &letra);
+    if (letra == 'A')
+    {
+        if (quant_litros <= 20)
+        {
+            desconto = (0.03 * 2.90) * quant_litros;
+            valor_pagar = (quant_litros * 2.90) - desconto;
+            printf("Opção escolhida = ÁLCOOL - O valor a ser pago é de R$ %.2f", valor_pagar);
+        }
+        else
+        {
+            desconto = (0.05 * 2.90) * quant_litros;
+            valor_pagar = (quant_litros * 2.90) - desconto;
+            printf("Opção escolhida = ÁLCOOL - O valor a ser pago é de R$ %.2f", valor_pagar);
+        }
+    }
+    else if (letra == 'G')
+    {
+        if (quant_litros <= 20)
+        {
+            desconto = (0.04 * 3.30) * quant_litros;
+            valor_pagar = (quant_litros * 3.30) - desconto;
+            printf("Opção escolhida = GASOLINA - O valor a ser pago é de R$ %.2f", valor_pagar);
+        }
+        else
+        {
+            desconto = (0.06 * 3.30) * quant_litros;
+            valor_pagar = (quant_litros * 3.30) - desconto;
+            printf("Opção escolhida = GASOLINA - O valor a ser pago é de R$ %.2f", valor_pagar);
+        }
+    }
+    return 0;
+}
+
+// Exercício 25
+int codigo_origem_preco()
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    float preco;
+    int codigo;
+    printf("Insira o preço: ");
+    scanf("%f", &preco);
+    printf("Insira o codigo do produto: ");
+    scanf("%d", &codigo);
+    if (codigo == 1)
+    {
+        printf("Procedência = Sul\n");
+        printf("Preço = %.2f\n", preco);
+    }
+    else if (codigo == 2)
+    {
+        printf("Procedência = Norte\n");
+        printf("Preço = %.2f\n", preco);
+    }
+    else if (codigo == 3)
+    {
+        printf("Procedência = Leste\n");
+        printf("Preço = %.2f\n", preco);
+    }
+    else if (codigo == 1)
+    {
+        printf("Procedência = Oeste\n");
+        printf("Preço = %.2f\n", preco);
+    }
+    else if (codigo == 5 || codigo == 6)
+    {
+        printf("Procedência = Sul\n");
+        printf("Preço = %.2f\n", preco);
+    }
+    else if (codigo == 7 || codigo == 8 || codigo == 9)
+    {
+        printf("Procedência = Sudeste\n");
+        printf("Preço = %.2f\n", preco);
+    }
+    else if (codigo >= 10 && codigo <= 20)
+    {
+        printf("Procedência = Centro-Oeste\n");
+        printf("Preço = %.2f\n", preco);
+    }
+    else if (codigo >= 25 && codigo <= 30)
+    {
+        printf("Procedência = Noroeste\n");
+        printf("Preço = %.2f\n", preco);
+    }
+    else
+    {
+        printf("Código inválido\n");
+    }
+    return 0;
+}
+
+int main()
+{
     // conta_bancaria();
     // peso_ideal();
     // imprimindo_condicionalmente();
@@ -349,5 +605,10 @@ int main(){
     // conceito_por_nota();
     // dois_valores_multiplos_ou_nao();
     // ler_numero_par_positivo_negativo();
+    // comparacao_de_dados();
+    // calculo_salario();
+    // placar_jogo();
+    // posto_de_combustivel();
+    codigo_origem_preco();
     return 0;
 }
